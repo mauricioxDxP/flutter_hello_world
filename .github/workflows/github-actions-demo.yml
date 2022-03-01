@@ -12,10 +12,11 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'beta'
-        
+      
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build web
+      - name: compilar para web  
+        run: flutter build web --base-href="/flutter_hello_world/"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
